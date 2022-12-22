@@ -1,0 +1,92 @@
+@import "../../style.scss";
+
+.navbar{
+    @include themify($themes){
+        z-index: 999;
+        background-color: themed("bg");
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+        border: none;
+        border-bottom: 1px solid themed("border");
+        position: sticky;
+        top: 0;
+        color: themed("textColor");
+
+        .left{
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            span{
+                font-weight: bold;
+                font-size: 20px;
+                color: themed("logo");
+            }
+
+            .search{
+                display: flex;
+                align-items: center;
+                padding-left: 5px;
+                gap: 10px;
+                border: 1px solid themed("border");
+                border-radius: 5px;
+                height: 30px;
+
+                @include mobile{
+                    border: none;
+                }
+
+                input{
+                    border: none;
+                    width: auto;
+                    background-color: transparent;
+                    color: themed("textColor");
+                
+                    @include mobile{
+                        display: none;
+                    }
+
+                    @include pad{
+                        width: auto;
+                    }
+                }
+                
+            }
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            @include mobile{
+                display: none;
+            }
+
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 500;
+
+                @include pad{
+                    display: none;
+                }
+
+                img{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                span{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

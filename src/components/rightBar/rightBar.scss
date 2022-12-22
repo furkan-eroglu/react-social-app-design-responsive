@@ -1,0 +1,126 @@
+@import "../../style.scss";
+
+.rightBar{
+    @include themify($themes){
+        flex: 3;
+        position: sticky;
+        top: 63px;
+        height: calc(100vh - 63px);
+        overflow: scroll;
+        background-color: themed("bgSoft");
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        @include mobile{
+            display: none;
+        }
+
+        @include pad{
+            display: none;
+        }
+
+        .container{
+            padding: 20px;
+
+
+            .item{
+                -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
+                -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
+                box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                background-color: themed("bg");
+
+                span{
+                    color: gray;
+                }
+
+                .user{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 20px 0px;
+
+                    p{
+                        color: themed("textColorSoft");
+                        font-size: 14px;
+                        
+                        span{
+                            font-weight: 500;
+                            color: themed("textColor");
+                            margin-right: 10px;
+                            font-size: 16px;
+                        }
+                    }
+
+                    .userInfo{
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                        position: relative;
+
+                        img{
+                            min-width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+
+                        .online{
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            background-color: limegreen;
+                            position: absolute;
+                            top: 0;
+                            left: 20px;
+                        }
+
+                        span{
+                            font-weight: 500;
+                            color: themed("textColorSoft");
+                        }
+                    }
+
+                    .buttons{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        button{
+                            border: none;
+                            border-radius: 5px;
+                            padding: 5px 15px;
+                            color: white;
+                            cursor: pointer;
+                            
+
+                            &:first-child{
+                                background-color: #5271ff;
+                                &:hover{
+                                    background-color: #6782fb;
+                                }
+                                &:active{
+                                    background-color: #5069da;
+                                }
+                            }
+
+                            &:last-child{
+                                background-color: #f0544f;
+                                &:hover{
+                                    background-color: #ed6c68;
+                                }
+                                &:active{
+                                    background-color: #d94540;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
