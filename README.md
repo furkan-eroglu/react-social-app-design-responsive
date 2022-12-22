@@ -1,4 +1,4 @@
-Responsive Social Media App Design
+# Responsive Social Media App Design
 
 ## Available Scripts
 
